@@ -1,0 +1,10 @@
+# Dependencies — npm install rebuilds these. Committing them costs -5.
+node_modules/
+
+# Secrets — .env never leaves your machine. Commit .env.example instead.
+.env
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db

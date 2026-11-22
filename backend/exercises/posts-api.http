@@ -1,0 +1,41 @@
+### Lesson 19 — requests for posts-api.js
+### VS Code: install "REST Client" (humao.rest-client), then click "Send Request" above each line.
+### No extension? Paste the URL into the browser (GET only) or use curl.
+
+@base = http://localhost:3000
+
+### Welcome text
+GET {{base}}/
+
+### Health check (JSON)
+GET {{base}}/api/health
+
+### All posts (newest first by default)
+GET {{base}}/api/posts
+
+### One post
+GET {{base}}/api/posts/2
+
+### Not found -> 404
+GET {{base}}/api/posts/99
+
+### Not a number -> 400
+GET {{base}}/api/posts/abc
+
+### Filter by author (case-insensitive)
+GET {{base}}/api/posts?author=Amina
+
+### Search titles
+GET {{base}}/api/posts?search=express
+
+### Most liked first
+GET {{base}}/api/posts?sort=popular
+
+### Bad sort -> 400
+GET {{base}}/api/posts?sort=random
+
+### Page 2, two per page
+GET {{base}}/api/posts?page=2&limit=2
+
+### Unknown route -> 404
+GET {{base}}/api/nothing-here
